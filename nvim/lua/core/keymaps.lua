@@ -3,18 +3,19 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap
 
 -- General
-keymap.set('i', 'jk', '<ESC>') -- exit insert mode with jk
+keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode with jk' })
+keymap.set('n', '<leader>ch', ':nohl<CR>', { desc = 'Clear search highlights' })
 
 -- Buffers
-keymap.set('n', '<leader>n', ':bn<cr>')
-keymap.set('n', '<leader>p', ':bp<cr>')
-keymap.set('n', '<leader>x', ':bd<cr>')
+keymap.set('n', '<leader>tn', ':bn<cr>')
+keymap.set('n', '<leader>tp', ':bp<cr>')
+keymap.set('n', '<leader>tx', ':bd<cr>')
 
 -- Window Management
-keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>se', '<C-w>=') -- split windows in equal width
-keymap.set('n', '<leader>sx', '<:close<CR>') -- close current split window
+keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' })
+keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' })
+keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Split windows in equal width' })
+keymap.set('n', '<leader>sx', '<:close<CR>', { desc = 'Close current split' })
 
 -- Telescope
 keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
